@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.or.ddit.login.model.userVo" alias="userVo"></typeAlias>
+		<typeAlias type="kr.or.ddit.board.freeBoard.model.freeBoardVo" alias="freeBoardVo"></typeAlias>
+		<typeAlias type="kr.or.ddit.board.manager.create.model.BoardVo" alias="BoardVo"></typeAlias>
+		<typeAlias type="kr.or.ddit.board.manager.create.model.postsVo" alias="postsVo"></typeAlias>
+		
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="pc152" />
+				<property name="password" value="java" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="kr/or/ddit/mybatis/mapper/login.xml" />
+		<mapper resource="kr/or/ddit/mybatis/mapper/freeBoard.xml" />
+		<mapper resource="kr/or/ddit/mybatis/mapper/createBoard.xml" />
+	</mappers>
+
+</configuration>
